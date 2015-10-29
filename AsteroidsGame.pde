@@ -17,8 +17,20 @@ class SpaceShip //extends Floater
     public void setDirectionX(double x) {myDirectionX=x;}
     public double getDirectionX() {return myDirectionX;}
     public void setDirectionY (double y) {myDirectionY=y;}
-    public double setDirectionY () {}
+      public void setDirectionY (double y) {myDirectionY=y;}
+    public double setDirectionY () {return myDirectionY;}
+    public void setPointDirection (int degrees) {myPointDirection= degrees;}
+    public int setPointDirection () {return myPointDirection;}
 
+   public SpaceShip()
+    {
+      corners=3;
+      xCorners= new int [coners];
+      yCorners= new int [coners];
+      xCorners[0]= -8;
+      yCorners[0]=-8;
+      
+    }
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
