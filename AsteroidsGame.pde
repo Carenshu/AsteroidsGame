@@ -22,13 +22,17 @@ class SpaceShip //extends Floater
     public void setPointDirection (int degrees) {myPointDirection= degrees;}
     public int setPointDirection () {return myPointDirection;}
 
-   public SpaceShip()
+  public SpaceShip()
     {
       corners=3;
       xCorners= new int [coners];
       yCorners= new int [coners];
       xCorners[0]= -8;
       yCorners[0]=-8;
+      xCorners[1]=16;
+      yCorners[1]=0;
+      xCorners[2]=-8;
+      yCorners[2]=8;
       
     }
 }
