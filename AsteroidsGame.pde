@@ -1,4 +1,6 @@
 //your variable declarations here
+SpaceShip x;
+SpaceShip y;
 public void setup() 
 {
   //your code here
@@ -6,35 +8,42 @@ public void setup()
 public void draw() 
 {
   //your code here
+  SpaceShip.show();
 }
-class SpaceShip //extends Floater  
+class SpaceShip extends Floater  
 {   
     //your code here
-       public void setX(int x){myX=x;}
+      public SpaceShip()
+    public void setX(int x){myX=x;}
     public int getX () {return myX;}
     public void setY(int y) {myY =y;}
     public void getY (){return myY;}
     public void setDirectionX(double x) {myDirectionX=x;}
     public double getDirectionX() {return myDirectionX;}
     public void setDirectionY (double y) {myDirectionY=y;}
-      public void setDirectionY (double y) {myDirectionY=y;}
     public double setDirectionY () {return myDirectionY;}
     public void setPointDirection (int degrees) {myPointDirection= degrees;}
     public int setPointDirection () {return myPointDirection;}
-
-  public SpaceShip()
-    {
-      corners=3;
-      xCorners= new int [coners];
-      yCorners= new int [coners];
-      xCorners[0]= -8;
-      yCorners[0]=-8;
-      xCorners[1]=16;
-      yCorners[1]=0;
-      xCorners[2]=-8;
-      yCorners[2]=8;
+}
+ 
+      public void show ()
+      {
+         corners=3;
+          xCorners= new int [coners];
+          yCorners= new int [coners];
+          xCorners[0]= -8;
+          yCorners[0]=-8;
+          xCorners[1]=16;
+          yCorners[1]=0;
+          xCorners[2]=-8;
+          yCorners[2]=8;
+      }
+    
       
-    }
+   
+
+
+
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
@@ -55,7 +64,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   abstract public double getDirectionY();   
   abstract public void setPointDirection(int degrees);   
   abstract public double getPointDirection(); 
-
+}
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
   {          
@@ -111,5 +120,6 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     }   
     endShape(CLOSE);  
   }   
-} 
+//} 
+
 
