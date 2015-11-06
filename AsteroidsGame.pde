@@ -1,10 +1,10 @@
 //your variable declarations here
-SpaceShip x;
-SpaceShip y;
+SpaceShip ship = new SpaceShip();
 public void setup() 
 {
   //your code here
-  size (512,512);
+  size(512, 512);
+  background(0);
 }
 public void draw() 
 {
@@ -14,23 +14,25 @@ public void draw()
 class SpaceShip extends Floater  
 {   
     //your code here
-      public SpaceShip()
-  {
-    public void setX(int x){myX=x;}
-    public int getX () {return myX;}
-    public void setY(int y) {myY =y;}
-    public void getY (){return myY;}
-    public void setDirectionX(double x) {myDirectionX=x;}
-    public double getDirectionX() {return myDirectionX;}
-    public void setDirectionY (double y) {myDirectionY=y;}
-    public double setDirectionY () {return myDirectionY;}
-    public void setPointDirection (int degrees) {myPointDirection= degrees;}
-    public int setPointDirection () {return myPointDirection;}
-    }
- 
+
+    //public SpaceShip()
+      //{
+        public void setX(int x){myX=x;}
+        public int getX () {return myX;}
+        public void setY(int y) {myY =y;}
+        public void getY (){return myY;}
+        public void setDirectionX(double x) {myDirectionX=x;}
+        public double getDirectionX() {return myDirectionX;}
+        public void setDirectionY (double y) {myDirectionY=y;}
+        public double setDirectionY () {return myDirectionY;}
+        public void setPointDirection (int degrees) {myPointDirection= degrees;}
+        public int setPointDirection () {return myPointDirection;}
+      //}
+
+   
       public void show ()
       {
-         corners=3;
+          corners=3;
           xCorners= new int [coners];
           yCorners= new int [coners];
           xCorners[0]= -8;
@@ -40,13 +42,12 @@ class SpaceShip extends Floater
           xCorners[2]=-8;
           yCorners[2]=8;
       }
-    
-      
-   
-
-
 
 }
+
+
+
+
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
   protected int corners;  //the number of corners, a triangular floater has 3   
@@ -123,5 +124,6 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     endShape(CLOSE);  
   }   
 //} 
+
 
 
