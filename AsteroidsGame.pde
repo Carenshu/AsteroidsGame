@@ -9,15 +9,14 @@ public void setup()
 public void draw() 
 {
   //your code here
-  SpaceShip.show();
+  ship.show();
+  ship.move();
+  public void keyPressed
 }
 class SpaceShip extends Floater  
 {   
     //your code here
-
-    //public SpaceShip()
-      //{
-        public void setX(int x){myX=x;}
+  public void setX(int x){myX=x;}
         public int getX () {return myX;}
         public void setY(int y) {myY =y;}
         public void getY (){return myY;}
@@ -27,12 +26,9 @@ class SpaceShip extends Floater
         public double setDirectionY () {return myDirectionY;}
         public void setPointDirection (int degrees) {myPointDirection= degrees;}
         public int setPointDirection () {return myPointDirection;}
-      //}
-
-   
-      public void show ()
+    public SpaceShip()
       {
-          corners=3;
+       corners=3;
           xCorners= new int [coners];
           yCorners= new int [coners];
           xCorners[0]= -8;
@@ -42,6 +38,15 @@ class SpaceShip extends Floater
           xCorners[2]=-8;
           yCorners[2]=8;
       }
+      public void move ()
+      {
+      
+      }
+
+   
+      
+         
+      
 
 }
 
