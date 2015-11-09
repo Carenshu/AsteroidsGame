@@ -1,4 +1,6 @@
 //your variable declarations here
+int myX, myY;
+double myDirectionX, myDirectionY, myPointDirection;
 SpaceShip ship = new SpaceShip();
 public void setup() 
 {
@@ -10,43 +12,46 @@ public void draw()
 {
   //your code here
   ship.show();
-  ship.move();
-  public void keyPressed
+ // ship.move();
+  //public void keyPressed
 }
 class SpaceShip extends Floater  
 {   
     //your code here
-  public void setX(int x){myX=x;}
+        public void setX(int x){ myX=x;}
         public int getX () {return myX;}
         public void setY(int y) {myY =y;}
-        public void getY (){return myY;}
+        public int getY (){return myY;}
         public void setDirectionX(double x) {myDirectionX=x;}
         public double getDirectionX() {return myDirectionX;}
         public void setDirectionY (double y) {myDirectionY=y;}
-        public double setDirectionY () {return myDirectionY;}
+        public double getDirectionY () {return myDirectionY;}
         public void setPointDirection (int degrees) {myPointDirection= degrees;}
-        public int setPointDirection () {return myPointDirection;}
+        public double getPointDirection () {return myPointDirection;}
+    
     public SpaceShip()
       {
-       corners=3;
-          xCorners= new int [coners];
-          yCorners= new int [coners];
+          corners=3;
+          xCorners= new int [corners];
+          yCorners= new int [corners];
           xCorners[0]= -8;
           yCorners[0]=-8;
           xCorners[1]=16;
           yCorners[1]=0;
           xCorners[2]=-8;
           yCorners[2]=8;
+          myCenterX=myCenterY=100;
+
       }
       public void move ()
       {
-      
+       //super.move();
       }
-
-   
-      
-         
-      
+      public void show()
+      {
+        //super.show();
+      }
+     
 
 }
 
