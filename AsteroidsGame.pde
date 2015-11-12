@@ -11,8 +11,8 @@ public void draw()
 {
   //your code here
   ship.show();
- // ship.move();
-  //public void keyPressed
+  //ship.move();
+  
 }
 class SpaceShip extends Floater  
 {   
@@ -31,27 +31,52 @@ class SpaceShip extends Floater
           myCenterX=100;
           myCenterY=100;
           myDirectionX=0;
-          myDIrectionY=0;
+          myDirectionY=0;
           myPointDirection=90;
           
 
       }
+
         public void setX(int x){ myCenterX=x;}
-        public int getX () {return myCenterX;}
+        public int getX () {return (int)myCenterX;}
         public void setY(int y) {myCenterY =y;}
-        public int getY (){return myCenterY;}
+        public int getY (){return (int)myCenterY;}
         public void setDirectionX(double x) {myDirectionX=x;}
         public double getDirectionX() {return myDirectionX;}
         public void setDirectionY (double y) {myDirectionY=y;}
         public double getDirectionY () {return myDirectionY;}
         public void setPointDirection (int degrees) {myPointDirection= degrees;}
         public double getPointDirection () {return myPointDirection;}
-    
-  
      
-     
+       // public void move() {super.move();}
+        //public void show() {super.show();}
+        
 
 }
+
+    public void keyPressed ()
+    {
+      if (key==CODED)
+      {
+        if (keyCode==UP)
+        {
+          //move up
+        }
+        else if (keyCode==DOWN)
+        {
+
+        }
+        else if (keyCode==RIGHT)
+        {
+
+        }
+        else if (keyCode==LEFT)
+        {
+
+        }
+
+      }
+    }
 
 
 
@@ -132,6 +157,10 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     endShape(CLOSE);  
   }   
 //} 
+
+
+
+
 
 
 
