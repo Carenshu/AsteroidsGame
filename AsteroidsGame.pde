@@ -1,6 +1,5 @@
 //your variable declarations here
-int myX, myY;
-double myDirectionX, myDirectionY, myPointDirection;
+
 SpaceShip ship = new SpaceShip();
 public void setup() 
 {
@@ -18,18 +17,7 @@ public void draw()
 class SpaceShip extends Floater  
 {   
     //your code here
-        public void setX(int x){ myX=x;}
-        public int getX () {return myX;}
-        public void setY(int y) {myY =y;}
-        public int getY (){return myY;}
-        public void setDirectionX(double x) {myDirectionX=x;}
-        public double getDirectionX() {return myDirectionX;}
-        public void setDirectionY (double y) {myDirectionY=y;}
-        public double getDirectionY () {return myDirectionY;}
-        public void setPointDirection (int degrees) {myPointDirection= degrees;}
-        public double getPointDirection () {return myPointDirection;}
-    
-    public SpaceShip()
+      public SpaceShip()
       {
           corners=3;
           xCorners= new int [corners];
@@ -40,17 +28,27 @@ class SpaceShip extends Floater
           yCorners[1]=0;
           xCorners[2]=-8;
           yCorners[2]=8;
-          myCenterX=myCenterY=100;
+          myCenterX=100;
+          myCenterY=100;
+          myDirectionX=0;
+          myDIrectionY=0;
+          myPointDirection=90;
+          
 
       }
-      public void move ()
-      {
-       //super.move();
-      }
-      public void show()
-      {
-        //super.show();
-      }
+        public void setX(int x){ myCenterX=x;}
+        public int getX () {return myCenterX;}
+        public void setY(int y) {myCenterY =y;}
+        public int getY (){return myCenterY;}
+        public void setDirectionX(double x) {myDirectionX=x;}
+        public double getDirectionX() {return myDirectionX;}
+        public void setDirectionY (double y) {myDirectionY=y;}
+        public double getDirectionY () {return myDirectionY;}
+        public void setPointDirection (int degrees) {myPointDirection= degrees;}
+        public double getPointDirection () {return myPointDirection;}
+    
+  
+     
      
 
 }
