@@ -10,8 +10,9 @@ public void setup()
 public void draw() 
 {
   //your code here
+  background(0);
   ship.show();
-  //ship.move();
+  ship.move();
   
 }
 class SpaceShip extends Floater  
