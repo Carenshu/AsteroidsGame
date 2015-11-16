@@ -83,7 +83,35 @@ SpaceShip ship= new SpaceShip();
       public double getPointDirection(){return myPointDirection;}   
  }
 
+  public void keyPressed ()
+    {
+      
+        if (keyCode==UP)
+        {
+          ship.accelerate(1);
+        }
+        else if (keyCode==DOWN)
+        {
+            ship.accelerate(-1);
+        }
+        else if (keyCode==RIGHT)
+        {
+            ship.rotate(4);
+        }
+        else if (keyCode==LEFT)
+        {
+            ship.rotate(-4);
+        } 
+        else if (keyCode=='72' )//hyperspace
+        
+        {
+            ship.setX((int)Math.random()*450);
+            ship.setY((int)Math.random()*450);
+            ship.setPointDirection((int)Math.random()*360);
+        }
 
+      
+    }
 
   abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
   {   
@@ -162,10 +190,3 @@ SpaceShip ship= new SpaceShip();
     }   
   } 
   
-
-
-
-
-
-
-
