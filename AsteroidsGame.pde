@@ -7,7 +7,7 @@ SpaceShip ship= new SpaceShip();
   {
     
     size(500,500);
-    background(0);
+    
     noStroke();
     
   }
@@ -43,6 +43,7 @@ SpaceShip ship= new SpaceShip();
        }
        if(key=='h')
        {
+           //redraw();
         ship.setX((int)(Math.random()*500));
         ship.setY((int)(Math.random()*500));
         ship.setPointDirection((int)(Math.random()*360));
@@ -69,7 +70,7 @@ SpaceShip ship= new SpaceShip();
           myDirectionY=0;
           myPointDirection=90;
      
-        myColor=color(255,0,0);
+        myColor=color(254,189,197);
       }
       public void setX(int x){myCenterX=x;}
       public int getX(){return (int)myCenterX;}
@@ -105,9 +106,12 @@ SpaceShip ship= new SpaceShip();
         else if (keyCode=='72' )//hyperspace
         
         {
-            ship.setX((int)Math.random()*450);
-            ship.setY((int)Math.random()*450);
-            ship.setPointDirection((int)Math.random()*360);
+            
+            ship.setDirectionX(0);
+            ship.setDirectionY(0);
+            ship.setX((int)(Math.random()*350));
+            ship.setY((int)(Math.random()*350));
+            ship.setPointDirection((int)(Math.random()*360));
         }
 
       
