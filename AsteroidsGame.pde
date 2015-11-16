@@ -1,6 +1,6 @@
 SpaceShip ship= new SpaceShip(); 
 
-
+Star[] starryNight= new Star[100];
 
 
   public void setup() 
@@ -9,47 +9,26 @@ SpaceShip ship= new SpaceShip();
     size(500,500);
     
     noStroke();
+    for (int i=0;i<starryNight.length;i++)
+    {
+        starryNight[i]= new Star();
+    }
     
   }
   public void draw() 
   {
     background(0);
-
-    
     ship.show();
     ship.move();
-
+ for (int i=0;i<starryNight.length;i++)
+    {
+        starryNight[i].show();
+    }
+    
    
     
   }
-   public void keyPressed()
-      {
-          
-      if(keyCode==UP)
-       {
-         ship.accelerate(.1);
-       }
-       if(keyCode==DOWN)
-       {
-        ship.accelerate(-.1);
-       }
-       if(keyCode==RIGHT)
-       {
-       ship.rotate(5);
-       }
-       if(keyCode==LEFT)
-       {
-        ship.rotate(-5);
-       }
-       if(key=='h')
-       {
-           //redraw();
-        ship.setX((int)(Math.random()*500));
-        ship.setY((int)(Math.random()*500));
-        ship.setPointDirection((int)(Math.random()*360));
-       }
-       
-   }
+   
    
   class SpaceShip extends Floater  
   {   
@@ -83,6 +62,53 @@ SpaceShip ship= new SpaceShip();
       public void setPointDirection(int degrees){myPointDirection=degrees;}
       public double getPointDirection(){return myPointDirection;}   
  }
+ public void keyPressed()
+      {
+          
+      if(keyCode==UP)
+       {
+         ship.accelerate(.1);
+       }
+       if(keyCode==DOWN)
+       {
+        ship.accelerate(-.1);
+       }
+       if(keyCode==RIGHT)
+       {
+       ship.rotate(5);
+       }
+       if(keyCode==LEFT)
+       {
+        ship.rotate(-5);
+       }
+       if(key=='h')
+       {
+           //ship.accelerate(0);
+        ship.setX((int)(Math.random()*500));
+        ship.setY((int)(Math.random()*500));
+        ship.setPointDirection((int)(Math.random()*360));
+       }
+       
+   }
+ 
+     class Star
+{
+    
+   private int myX, myY;
+    public Star()
+    {
+        myX= ((int)(Math.random()*495));
+        myY= ((int)(Math.random()*495));
+    }
+    public void show ()
+    {
+        fill(255,190,127);
+        ellipse(myX,myY,3,3);
+    
+    }
+    
+    
+    }
 
   public void keyPressed ()
     {
@@ -194,3 +220,4 @@ SpaceShip ship= new SpaceShip();
     }   
   } 
   
+
