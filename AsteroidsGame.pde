@@ -20,10 +20,10 @@ Star[] starryNight= new Star[100];
     background(0);
     ship.show();
     ship.move();
- for (int i=0;i<starryNight.length;i++)
-    {
-        starryNight[i].show();
-    }
+    for (int i=0;i<starryNight.length;i++)
+       {
+          starryNight[i].show();
+        }
     
    
     
@@ -48,8 +48,9 @@ Star[] starryNight= new Star[100];
           myDirectionX=0;
           myDirectionY=0;
           myPointDirection=90;
-     
         myColor=color(254,189,197);
+       
+
       }
       public void setX(int x){myCenterX=x;}
       public int getX(){return (int)myCenterX;}
@@ -62,12 +63,12 @@ Star[] starryNight= new Star[100];
       public void setPointDirection(int degrees){myPointDirection=degrees;}
       public double getPointDirection(){return myPointDirection;}   
  }
+
  
- 
-     class Star
-{
+class Star
+    {
     
-   private int myX, myY;
+    private int myX, myY;
     public Star()
     {
         myX= ((int)(Math.random()*495));
@@ -75,7 +76,7 @@ Star[] starryNight= new Star[100];
     }
     public void show ()
     {
-        fill(255,190,127);
+        color(255,190,127);
         ellipse(myX,myY,3,3);
     
     }
@@ -102,7 +103,7 @@ Star[] starryNight= new Star[100];
         {
             ship.rotate(-4);
         } 
-        else if (keyCode=='h' )//hyperspace
+        else if (keyCode==' ' )
         
         {
             
@@ -114,6 +115,53 @@ Star[] starryNight= new Star[100];
         }
 
       
+    }
+
+    class Asteroids extends Floater
+    {
+      private int rotSpeed;
+      public Asteroids ()
+      {
+        corners[6];
+        xCorners= new int[corners];
+        yCorners= new int[corners];
+        xCorners[0]= -11;
+        yCorners[0]= -8;
+        xCorners[1]= 7;
+        yCorners[1]= -8;
+        xCorners[2]= 13;
+        yCorners[2]= 0;
+        xCorners[3]= 6;
+        yCorners[3]= 10;
+        xCorners[4]= -11;
+        yCorners[4]= 8;
+        xCorners[5]= -5;
+        yCorners[5]= 0;
+        myCenterX=100;
+        myCenterY=100;
+        myDirectionX=0;
+        myDirectionY=0;
+        myPointDirection=90;
+        myColor=color(95,78,67);
+          
+      }
+
+      public void move()
+      {
+
+          
+      }
+
+      public void setX(int x){myCenterX=x;}
+      public int getX(){return (int)myCenterX;}
+      public void setY(int y){myCenterY=y;}
+      public int getY(){return (int)myCenterY;}
+      public void setDirectionX(double x){myDirectionX=x;}
+      public double getDirectionX(){return myDirectionX;}
+      public void setDirectionY(double y){myDirectionY=y;}
+      public double getDirectionY(){return myDirectionY;}
+      public void setPointDirection(int degrees){myPointDirection=degrees;}
+      public double getPointDirection(){return myPointDirection;}   
     }
 
   abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
@@ -193,4 +241,3 @@ Star[] starryNight= new Star[100];
     }   
   } 
   
-
