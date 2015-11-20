@@ -1,4 +1,5 @@
 SpaceShip ship= new SpaceShip(); 
+Asteroids rock= new Asteroids();
 
 Star[] starryNight= new Star[100];
 
@@ -15,6 +16,8 @@ Star[] starryNight= new Star[100];
     }
     
   }
+
+
   public void draw() 
   {
     background(0);
@@ -24,7 +27,9 @@ Star[] starryNight= new Star[100];
        {
           starryNight[i].show();
         }
-    
+        
+    rock.show();
+    rock.move();
    
     
   }
@@ -43,8 +48,8 @@ Star[] starryNight= new Star[100];
           yCorners[1]=0;
           xCorners[2]=-8;
           yCorners[2]=8;
-          myCenterX=100;
-          myCenterY=100;
+          myCenterX=150;
+          myCenterY=200;
           myDirectionX=0;
           myDirectionY=0;
           myPointDirection=90;
@@ -97,11 +102,12 @@ class Star
         }
         else if (keyCode==RIGHT)
         {
-            ship.rotate(4);
+            ship.turn(4);
         }
         else if (keyCode==LEFT)
         {
-            ship.rotate(-4);
+            ship.turn(-4);
+
         } 
         else if (keyCode==' ' )
         
@@ -122,7 +128,7 @@ class Star
       private int rotSpeed;
       public Asteroids ()
       {
-        corners[6];
+        corners=6;
         xCorners= new int[corners];
         yCorners= new int[corners];
         xCorners[0]= -11;
@@ -143,12 +149,13 @@ class Star
         myDirectionY=0;
         myPointDirection=90;
         myColor=color(95,78,67);
-          
+        rotSpeed=150;  
       }
 
       public void move()
       {
-
+          rotate(radians(rotSpeed));
+          super.move(); 
           
       }
 
@@ -193,7 +200,7 @@ class Star
       myDirectionX += ((dAmount) * Math.cos(dRadians));    
       myDirectionY += ((dAmount) * Math.sin(dRadians));       
     }   
-    public void rotate (int nDegreesOfRotation)   
+    public void turn (int nDegreesOfRotation)   
     {     
       //rotates the floater by a given number of degrees    
       myPointDirection+=nDegreesOfRotation;   
