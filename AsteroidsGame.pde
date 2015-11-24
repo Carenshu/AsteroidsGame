@@ -42,6 +42,7 @@ Asteroids[] bunchorocks= new Asteroids[25];
     rock.show();
     rock.move();
     
+    
 
     
   }
@@ -158,11 +159,11 @@ class Star
         yCorners[5]= 0;
         myCenterX=100;
         myCenterY=100;
-        myDirectionX=0;
-        myDirectionY=0;
+        myDirectionX=(int)(Math.random()*10);
+        myDirectionY=(int)(Math.random()*10);
         myPointDirection=90;
         myColor=color(95,78,67);
-        rotSpeed=(int)(Math.random()*360);  
+        rotSpeed=(int)(Math.random()*10);  
       }
 
 
