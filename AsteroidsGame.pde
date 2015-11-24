@@ -2,7 +2,7 @@ SpaceShip ship= new SpaceShip();
 Asteroids rock= new Asteroids();
 
 Star[] starryNight= new Star[100];
-Asteroids[] bunchorocks= new Asteroids[25];
+Asteroids[] bunchorocks= new Asteroids[2];
 
   public void setup() 
   {
@@ -157,13 +157,13 @@ class Star
         yCorners[4]= 8;
         xCorners[5]= -5;
         yCorners[5]= 0;
-        myCenterX=100;
-        myCenterY=100;
-        myDirectionX=(int)(Math.random()*10);
-        myDirectionY=(int)(Math.random()*10);
+        myCenterX=(int)(Math.random()*20);
+        myCenterY=(int)(Math.random()*20);
+        myDirectionX=(int)(Math.random()*5);
+        myDirectionY=(int)(Math.random()*5);
         myPointDirection=90;
         myColor=color(95,78,67);
-        rotSpeed=(int)(Math.random()*10);  
+        rotSpeed=((int)(Math.random()*360))*Math.PI/180;  
       }
 
 
@@ -171,8 +171,7 @@ class Star
       {
          rotate(rotSpeed);
           super.move();
-          //super.turn(rotSpeed);
-        //   print (rotSpeed);
+         
       }
 
       public void setX(int x){myCenterX=x;}
@@ -264,4 +263,6 @@ class Star
       endShape(CLOSE);  
     }   
   } 
-  
+   
+
+
