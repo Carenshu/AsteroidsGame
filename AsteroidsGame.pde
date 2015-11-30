@@ -2,7 +2,7 @@ SpaceShip ship= new SpaceShip();
 Asteroids rock= new Asteroids();
 
 Star[] starryNight= new Star[100];
-Asteroids[] bunchorocks= new Asteroids[2];
+Asteroids[] bunchorocks= new Asteroids[5];
 
   public void setup() 
   {
@@ -33,9 +33,12 @@ Asteroids[] bunchorocks= new Asteroids[2];
           starryNight[i].show();
         }
 
+    for (int i=0;i<starryNight.length;i++)
+       {
+          bunchorocks[i].show();
+          bunchorocks[i].move();
+        }
    
-    rock.show();
-    rock.move();
     
     
 
@@ -280,4 +283,3 @@ class Star
     }   
   } 
    
-
