@@ -3,6 +3,10 @@ SpaceShip ship= new SpaceShip();
 
 Star[] starryNight= new Star[100];
 Asteroids[] bunchorocks= new Asteroids[5];
+//ArrayList <Asteroids> bunchorocks;
+//bunchorocks= new ArrayList <Asteroids>();
+
+
 
   public void setup() 
   {
@@ -19,6 +23,7 @@ Asteroids[] bunchorocks= new Asteroids[5];
     {
       bunchorocks[i]= new Asteroids();
     }
+    
     
   }
 
@@ -71,7 +76,7 @@ class Asteroids extends Floater
         myCenterY=(int)(Math.random()*500);
          myPointDirection=(int)(Math.random()*360);
         myColor=color(45,255,0);
-        rotSpeed=(int)(Math.random()*10);
+        rotSpeed=(int)((Math.random()*6)-3);
        
         if(rot==1)
         {
@@ -88,9 +93,9 @@ class Asteroids extends Floater
 
 public void move()
   {
-    rotate(rotSpeed);
+    turn(rotSpeed);
     super.move();
-    println("rotSpeed "+rotSpeed);
+   
   } 
 
   public void setX(int x){myCenterX=x;}
