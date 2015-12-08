@@ -2,9 +2,8 @@ SpaceShip ship= new SpaceShip();
 //Asteroids rock= new Asteroids();
 
 Star[] starryNight= new Star[100];
-Asteroids[] bunchorocks= new Asteroids[5];
-//ArrayList <Asteroids> bunchorocks;
-//bunchorocks= new ArrayList <Asteroids>();
+//Asteroids[] bunchorocks= new Asteroids[5];
+ArrayList <Asteroids> bunchorocks= new ArrayList <Asteroids>();
 
 
 
@@ -19,12 +18,17 @@ Asteroids[] bunchorocks= new Asteroids[5];
         starryNight[i]= new Star();
     }
 
-    for (int i=0; i<bunchorocks.length; i++)
+   /* for (int i=0; i<bunchorocks.length; i++)
     {
       bunchorocks[i]= new Asteroids();
     }
-    
-    
+    */
+for (int i=0;i<bunchorocks.size(); i++)
+    {
+        bunchorocks.add(i, new Asteroids());
+    }
+  
+
   }
 
 
@@ -38,13 +42,18 @@ Asteroids[] bunchorocks= new Asteroids[5];
           starryNight[i].show();
         }
 
-    for (int i=0;i<bunchorocks.length;i++)
+    /*for (int i=0;i<bunchorocks.length;i++)
        {
-          bunchorocks[i].show();
-          bunchorocks[i].move();
-        }
+          bunchorocks.show();
+          bunchorocks.move();
+        }*/
    
     
+    for (int i=0;i<bunchorocks.size();i++)
+       {
+          bunchorocks.get(i).show();
+          bunchorocks.get(i).move();
+        }
   }
    
 
