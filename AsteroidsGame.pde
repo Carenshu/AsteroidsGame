@@ -288,5 +288,5 @@ class Star
       }   
       endShape(CLOSE);  
     }   
-  } 
+  }  
    
