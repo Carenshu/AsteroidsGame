@@ -25,7 +25,7 @@ ArrayList <Asteroids> bunchorocks;
     */
 for (int i=0;i<5; i++)
     {
-        bunchorocks.add(i, new Asteroids());
+        bunchorocks.add( new Asteroids());
     }
   
 
