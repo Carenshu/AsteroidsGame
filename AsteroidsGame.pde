@@ -18,11 +18,6 @@ ArrayList <Asteroids> bunchorocks= new ArrayList <Asteroids>();
         starryNight[i]= new Star();
     }
 
-   /* for (int i=0; i<bunchorocks; i++)
-    {
-      bunchorocks[i]= new Asteroids();
-    }
-    */
 for (int i=0;i<5; i++)
     {
         bunchorocks.add(new Asteroids());
@@ -42,17 +37,21 @@ for (int i=0;i<5; i++)
           starryNight[i].show();
         }
 
-    /*for (int i=0;i<bunchorocks.length;i++)
-       {
-          bunchorocks.show();
-          bunchorocks.move();
-        }*/
+   
    
     
     for (int i=0;i<bunchorocks.size();i++)
        {
           bunchorocks.get(i).show();
           bunchorocks.get(i).move();
+
+          float d = dist(ship.getX(), ship.getY(), bunchorocks.get(i).getX(), bunchorocks.get(i).getY());
+          System.out.println(d);
+
+          if (d<20)
+          {
+            bunchorocks.remove(i);
+          }
         }
   }
    
