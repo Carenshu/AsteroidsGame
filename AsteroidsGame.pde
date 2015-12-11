@@ -1,10 +1,11 @@
 SpaceShip ship= new SpaceShip(); 
-//Asteroids rock= new Asteroids();
+
+Bullets rounds= new Bullets();
 
 Star[] starryNight= new Star[100];
-//Asteroids[] bunchorocks= new Asteroids[5];
-ArrayList <Asteroids> bunchorocks= new ArrayList <Asteroids>();
 
+ArrayList <Asteroids> bunchorocks= new ArrayList <Asteroids>();
+//ArrayList <bullets>
 
 
   public void setup() 
@@ -53,8 +54,33 @@ for (int i=0;i<5; i++)
             bunchorocks.remove(i);
           }
         }
+
+        rounds.show();
+        rounds.move();
   }
-   
+
+
+   class Bullets extends Floater
+   {
+
+    public Bullets() 
+    {
+      myCenterX=150;
+      myCenterY=200;
+      myPointDirection=90;
+      double dRadians= myPointDirection*(Math.PI/180);
+      myDirectionX= 5*Math.cos(dRadians)+ myDirectionX;
+      myDirectionY= 5*Math.cos(dRadians)+ myDirectionY;
+
+    }
+
+     public void show()
+     {
+       color(0);
+        ellipse(myX,myY,3,3);
+     }
+
+   }
 
 
 class Asteroids extends Floater
