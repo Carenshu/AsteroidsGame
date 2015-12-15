@@ -5,7 +5,7 @@ Bullets rounds= new Bullets();
 Star[] starryNight= new Star[100];
 
 ArrayList <Asteroids> bunchorocks= new ArrayList <Asteroids>();
-//ArrayList <bullets>
+ArrayList <bullets> ammo= new ArrayList <bullets>();
 
 
   public void setup() 
@@ -55,20 +55,23 @@ for (int i=0;i<5; i++)
           }
         }
 
-        rounds.show();
-        rounds.move();
+        for (int i=0; i<ammo.size(); i++)
+        {
+            ammo.get(i).show();
+            ammo.get(i).move();
+            }
   }
 
 
    class Bullets extends Floater
    {
-
+      double dRadians;
     public Bullets() 
     {
       myCenterX=150;
       myCenterY=200;
       myPointDirection=90;
-      double dRadians= myPointDirection*(Math.PI/180);
+      dRadians = myPointDirection*(Math.PI/180);
       myDirectionX= 5*Math.cos(dRadians)+ myDirectionX;
       myDirectionY= 5*Math.cos(dRadians)+ myDirectionY;
 
@@ -242,7 +245,10 @@ class Star
             ship.setY((int)(Math.random()*350));
             ship.setPointDirection((int)(Math.random()*360));
         }
-
+        if (keyCode=="s")
+        {
+            ammo.add(new bullet(ship));
+        }
       
     }
 
@@ -324,4 +330,3 @@ class Star
     }   
   } 
    
-
