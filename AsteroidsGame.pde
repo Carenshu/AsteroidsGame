@@ -11,7 +11,7 @@ ArrayList <Bullets> ammo= new ArrayList <Bullets>();
   public void setup() 
   {
     
-    size(500,500);
+    size(500,500,P2D);
     
     noStroke();
     for (int i=0;i<starryNight.length;i++)
