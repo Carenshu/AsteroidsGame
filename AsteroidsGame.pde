@@ -33,6 +33,7 @@ ArrayList <Bullets> ammo= new ArrayList <Bullets>();
     background(0);
     ship.show();
     ship.move();
+    
     for (int i=0;i<starryNight.length;i++)
        {
           starryNight[i].show();
@@ -50,15 +51,20 @@ ArrayList <Bullets> ammo= new ArrayList <Bullets>();
             bunchorocks.remove(i);
           }
        }
+       
       for (int i=0; i<ammo.size(); i++)
+     
       {
         ammo.get(i).show();
         ammo.get(i).move();
-        float s = dist(bunchorocks.get(i).getX(), bunchorocks.get(i).getY(),ammo.get(i).getX(), ammo.get(i).getY());
+        float s = dist(ammo.get(i).getX(), ammo.get(i).getY(),bunchorocks.get(i).getX(), bunchorocks.get(i).getY());
+       
         if (s<15)
           {
-           ammo.remove(i);
-           bunchorocks.remove(i); 
+           //ammo.remove(i);
+           bunchorocks.remove(i);
+           bunchorocks.add(new Asteroids()); 
+           
           }
       }
     
