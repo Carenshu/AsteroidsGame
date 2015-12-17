@@ -11,7 +11,7 @@ ArrayList <Bullets> ammo= new ArrayList <Bullets>();
   public void setup() 
   {
     
-    size(500,500,P2D);
+    size(500,500);
     
     noStroke();
     for (int i=0;i<starryNight.length;i++)
@@ -19,7 +19,7 @@ ArrayList <Bullets> ammo= new ArrayList <Bullets>();
         starryNight[i]= new Star();
     }
 
-for (int i=0;i<5; i++)
+    for (int i=0;i<5; i++)
     {
         bunchorocks.add(new Asteroids());
     }
@@ -37,10 +37,7 @@ for (int i=0;i<5; i++)
        {
           starryNight[i].show();
         }
-
-   
-   
-    
+ 
     for (int i=0;i<bunchorocks.size();i++)
        {
           bunchorocks.get(i).show();
@@ -48,23 +45,33 @@ for (int i=0;i<5; i++)
 
           float d = dist(ship.getX(), ship.getY(), bunchorocks.get(i).getX(), bunchorocks.get(i).getY());
           
-
           if (d<20)
           {
             bunchorocks.remove(i);
           }
+       }
+      for (int i=0; i<ammo.size(); i++)
+      {
+        ammo.get(i).show();
+        ammo.get(i).move();
+        float s = dist(bunchorocks.get(i).getX(), bunchorocks.get(i).getY(),ammo.get(i).getX(), ammo.get(i).getY());
+        if (s<15)
+          {
+           ammo.remove(i);
+           bunchorocks.remove(i); 
+          }
+      }
+    
+          
         }
 
-for (int i=0; i<ammo.size(); i++)
-        {
-            ammo.get(i).show();
-            ammo.get(i).move();
-
-            }
-            rounds.show();
-            rounds.move();
+      
             
-  }
+           
+           
+      
+            
+
 
 
    class Bullets extends Floater
@@ -79,27 +86,33 @@ for (int i=0; i<ammo.size(); i++)
       dRadians = myPointDirection*(Math.PI/180);
       myDirectionX= 5*Math.cos(dRadians)+ myDirectionX;
       myDirectionY= 5*Math.sin(dRadians)+ myDirectionY;
-      
+    
 
     }
 
      public void show()
      {
-       color(255,255,255);
+       noStroke();
+       fill(255,0,0);
         ellipse((int)myCenterX,(int)myCenterY,10,10);
      }
      
+     public void move()
+     {
+       myCenterX += myDirectionX+.25;    
+      myCenterY += myDirectionY+.25;  
+     }
      
-  public void setX(int x){myCenterX=x;}
-  public int getX(){return (int)myCenterX;}
-  public void setY(int y){myCenterY=y;}
-  public int getY(){return (int)myCenterY;}
-  public void setDirectionX(double x){myDirectionX=x;}
-  public double getDirectionX(){return myDirectionX;}
-  public void setDirectionY(double y){myDirectionY=y;}
-  public double getDirectionY(){return myDirectionY;}
-  public void setPointDirection(int degrees){myPointDirection=degrees;}
-  public double getPointDirection(){return myPointDirection;} 
+      public void setX(int x){myCenterX=x;}
+      public int getX(){return (int)myCenterX;}
+      public void setY(int y){myCenterY=y;}
+      public int getY(){return (int)myCenterY;}
+      public void setDirectionX(double x){myDirectionX=x;}
+      public double getDirectionX(){return myDirectionX;}
+      public void setDirectionY(double y){myDirectionY=y;}
+      public double getDirectionY(){return myDirectionY;}
+      public void setPointDirection(int degrees){myPointDirection=degrees;}
+      public double getPointDirection(){return myPointDirection;} 
    }
 
 
@@ -253,10 +266,10 @@ class Star
             ship.setY((int)(Math.random()*350));
             ship.setPointDirection((int)(Math.random()*360));
         }
-        if (keyCode=='b')
-        {
-            ammo.add(new Bullets());
-        }
+       if (keyCode=='1'){
+              //rounds.move();
+              ammo.add(new Bullets());
+            }
       
     }
 
